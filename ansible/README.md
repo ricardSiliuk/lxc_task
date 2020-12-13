@@ -1,5 +1,15 @@
 # Ansible
 
+Contents of folder:
+
+* `lxc_containers.yml`
+* `dante.yml`
+* `squid.yml`
+
+`lxc_containers.yml` will run on localhost to install containers.
+
+Other two will only apply to their specific containers.
+
 To execute a playbook, run:
 
 `ansible-playbook PLAYBOOK_NAME -i inventory`

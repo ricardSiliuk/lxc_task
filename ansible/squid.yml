@@ -6,3 +6,8 @@
       package:
         name: squid
         state: present
+    - name: Ensure squid service is enabled and running
+      service:
+        name: squid
+        state: started
+        enabled: true

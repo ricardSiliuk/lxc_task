@@ -6,3 +6,8 @@
       package:
         name: dante-server
         state: present
+    - name: Ensure dante is enabled and running
+      service:
+        name: danted
+        state: started
+        enabled: true
