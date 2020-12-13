@@ -1,0 +1,8 @@
+---
+- name: Dante setup
+  hosts: dante
+  tasks:
+    - name: Install dante
+      package:
+        name: dante-server
+        state: present

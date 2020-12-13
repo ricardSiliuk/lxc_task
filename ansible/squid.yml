@@ -1,0 +1,8 @@
+---
+- name: Squid setup
+  hosts: squid
+  tasks:
+    - name: Install squid
+      package:
+        name: squid
+        state: present

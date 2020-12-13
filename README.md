@@ -53,17 +53,21 @@ systemctl start lxc-net
 
 * Follow this to install `Ansible` <https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-debian>
 * To allow *Ansible* to manage `lxc`, install community plugin with `ansible-galaxy collection install community.general`
-* Plugin requires python2-lxc bindings, so...
+
+Plugin requires python2-lxc bindings, so...
+
 * `wget https://github.com/lxc/python2-lxc/archive/master.zip`
 * `apt install unzip`
 * `unzip master.zip`
 * `apt install gcc python-dev lxc-dev
 * `python setup.py install`
 
-You can *now* move onto ansible stuff...
-
 ### Running a playbook
 
 To execute a playbook, run:
 
-`ansible-playbook PLAYBOOK_NAME`
+`ansible-playbook PLAYBOOK_NAME -i inventory`
+
+Playbooks can be found in `ansible/` folder of this repo.
+
+Inventory should match hostnames in `/etc/hosts`. Not sure how inventory management works in Ansible and at this rate I'm too hungry to ask :D
