@@ -1,0 +1,13 @@
+auth_param basic program /usr/lib/squid/basic_ncsa_auth /etc/squid/passwords
+auth_param basic realm Squid proxy-caching web server
+auth_param basic credentialsttl 24 hours
+auth_param basic casesensitive off
+acl authenticated proxy_auth REQUIRED
+acl domain_blacklist dstdomain "/etc/squid/domain_blacklist.txt"
+http_access allow authenticated
+http_access deny all domain_blacklist
+http_access deny all
+dns_v4_first off
+forwarded_for off
+via off
+http_port 8888

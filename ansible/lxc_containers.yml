@@ -41,6 +41,7 @@
         name: dante-container
         container_log: true
         template: ubuntu
+        template_options: --release bionic # requires at least bionic for newer, same-same dante
         state: started
         container_command: |
           apt update && apt install curl -y

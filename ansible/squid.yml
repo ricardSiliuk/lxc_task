@@ -1,11 +1,46 @@
 ---
 - name: Squid setup
   hosts: squid
+  handlers:
+    - name: Restart dante
+      service:
+        name: squid
+        state: restarted
   tasks:
     - name: Install squid
       package:
         name: squid
         state: present
+    # Should restart service after this one
+    - name: Write squid config
+      template:
+        src: templates/squid/squid.conf.j2
+        dest: /etc/squid/squid.conf
+        owner: root
+        group: root
+        mode: "0640"
+      notify:
+        - Restart squid
+    # Should restart service after this one
+    - name: Write squid domain blacklist
+      template:
+        src: templates/squid/domain_blacklist.txt.j2
+        dest: /etc/squid/domain_blacklist.txt
+        owner: root
+        group: root
+        mode: "0640"
+      notify:
+        - Restart squid
+    # Should restart service after this one (or, actually, probably not? not sure whether it reads it constantly or upon start)
+    - name: Write passwords file for squid
+      template:
+        src: templates/squid/passwords.j2
+        dest: /etc/squid/passwords
+        owner: root
+        group: root
+        mode: "0400"
+      notify:
+        - Restart squid
     - name: Ensure squid service is enabled and running
       service:
         name: squid

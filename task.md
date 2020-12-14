@@ -9,17 +9,17 @@ Pass: -
 
 Kiekvieną žingsnį parašyti su Ansible, jo kodą užGit'inti:
 
-* Sukurti du LXC konteinerius
-  * Padalinti šusnį IPv6 IP'ų šiems dviems konteineriams, ne mažiau kai po 4 IP adresus per konteinerį
-  * Konteineriuose suinstaliuoti Squid proxy
-    * Squid'as turi išeiti į internetą iš to IPv6 IP'o, į kurį buvo prisijungta
-    * Apsaugoti Squid'ą su login/pass
-    * Uždrausti squid vartotojams pasiekti google search domenus
+* Sukurti du LXC konteinerius: ✔
+  * Padalinti šusnį IPv6 IP'ų šiems dviems konteineriams, ne mažiau kai po 4 IP adresus per konteinerį: ❓
+  * Konteineriuose suinstaliuoti Squid proxy ✔
+    * Squid'as turi išeiti į internetą iš to IPv6 IP'o, į kurį buvo prisijungta ❌
+    * Apsaugoti Squid'ą su login/pass ✔
+    * Uždrausti squid vartotojams pasiekti google search domenus ✔
   * Konteineriuose suinstaliuoti Dante SOCKS server
     * Dante turi išeiti į internetą iš to IP'o, į kurį buvo prisijungta
-    * Apsaugoti Dante su login/pass
-    * Uždrausti pasiekti target 25 portą Dante useriui/useriams
-* Apsaugoti serverį savo nuožiūra. Jeigu konstruojamas firewall'as, daryti jį tiesiogiai su iptables.
+    * Apsaugoti Dante su login/pass ✔
+    * Uždrausti pasiekti target 25 portą Dante useriui/useriams ✔
+* Apsaugoti serverį savo nuožiūra. Jeigu konstruojamas firewall'as, daryti jį tiesiogiai su iptables. ❌
 * Pateikti Ansible kodą Git repositorijos formatu.
 * Pateikti SSH, Squid, Dante prisijungimus
 

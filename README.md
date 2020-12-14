@@ -61,3 +61,7 @@ Plugin requires python2-lxc bindings, so...
 * `unzip master.zip`
 * `apt install gcc python-dev lxc-dev
 * `python setup.py install`
+
+At some point, you'll have to set up `passwords` file for squid.
+
+* `apt install apache2-utils` (although I should probably return to this and change it to get this stuff from vault)

@@ -1,11 +1,29 @@
 ---
 - name: Dante setup
   hosts: dante
+  handlers:
+    - name: Restart dante
+      service:
+        name: danted
+        state: restarted
   tasks:
     - name: Install dante
       package:
         name: dante-server
         state: present
+    - name: Write dante config
+      template:
+        src: templates/dante/danted.conf.j2
+        dest: /etc/danted.conf
+        owner: root
+        group: root
+        mode: "0640"
+      notify:
+        - Restart dante
+    - name: Add user for dante
+      user:
+        name: usertest
+        password: usertest
     - name: Ensure dante is enabled and running
       service:
         name: danted
