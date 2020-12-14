@@ -59,7 +59,7 @@ Plugin requires python2-lxc bindings, so...
 * `wget https://github.com/lxc/python2-lxc/archive/master.zip`
 * `apt install unzip`
 * `unzip master.zip`
-* `apt install gcc python-dev lxc-dev
+* `apt install gcc python-dev lxc-dev`
 * `python setup.py install`
 
 At some point, you'll have to set up `passwords` file for squid.
