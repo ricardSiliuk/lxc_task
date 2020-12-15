@@ -15,8 +15,8 @@ Kiekvieną žingsnį parašyti su Ansible, jo kodą užGit'inti:
     * Squid'as turi išeiti į internetą iš to IPv6 IP'o, į kurį buvo prisijungta ❌
     * Apsaugoti Squid'ą su login/pass ✔
     * Uždrausti squid vartotojams pasiekti google search domenus ✔
-  * Konteineriuose suinstaliuoti Dante SOCKS server
-    * Dante turi išeiti į internetą iš to IP'o, į kurį buvo prisijungta
+  * Konteineriuose suinstaliuoti Dante SOCKS server ✔
+    * Dante turi išeiti į internetą iš to IP'o, į kurį buvo prisijungta ✔
     * Apsaugoti Dante su login/pass ✔
     * Uždrausti pasiekti target 25 portą Dante useriui/useriams ✔
 * Apsaugoti serverį savo nuožiūra. Jeigu konstruojamas firewall'as, daryti jį tiesiogiai su iptables. ❌

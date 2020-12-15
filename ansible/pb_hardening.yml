@@ -1,0 +1,33 @@
+---
+- name: Hardening
+  hosts: localhost
+  handlers:
+    - name: Restart sshd
+      service:
+        name: sshd
+        state: restarted
+  tasks:
+    # SSH stuff
+    - name: Install fail2ban
+      package:
+        name: fail2ban
+        state: present
+    - name: Install sshd
+      package:
+        name: openssh-server
+        state: present
+    - name: Configure sshd
+      template:
+        src: templates/hardening/sshd_config.j2
+        dest: /etc/ssh/sshd_config
+        owner: root
+        group: root
+        mode: "0644"
+      notify:
+        - Restart sshd
+    - name: Create user with sudo rights
+      user:
+        name: ackrite
+        password: ejshcKlfTjjrpviHPvcO
+        groups: sudo
+        group: ackrite

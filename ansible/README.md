@@ -2,9 +2,10 @@
 
 Contents of folder:
 
-* `lxc_containers.yml`
-* `dante.yml`
-* `squid.yml`
+* `pb_lxc_containers.yml`
+* `pb_dante.yml`
+* `pb_squid.yml`
+* `pb_hardening.yml`
 
 `lxc_containers.yml` will run on localhost to install containers.
 

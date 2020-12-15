@@ -1,5 +1,13 @@
 # Prerequisites
 
+This file will tell you how to set up server for the task. Covered topics:
+
+* LXC
+  * Network setup
+* Ansible
+
+Hardening will be covered in `hardening.md`.
+
 ## LXC
 
 * *N.B.*: This setup will produce privileged containers
